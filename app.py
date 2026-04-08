@@ -19,6 +19,7 @@ st.sidebar.header("Filters")
 
 year = st.sidebar.slider("Select Year", 1990, 2024, 2010)
 
+prices['date'] = pd.to_datetime(prices['date'])
 prices['year'] = prices['date'].dt.year
 
 filtered = prices[prices['year'] == year]
